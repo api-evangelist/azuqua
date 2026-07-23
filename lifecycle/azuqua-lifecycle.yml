@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://azuqua.com/
+status: end-of-life
+summary: >-
+  Azuqua's standalone iPaaS / workflow-automation product has been discontinued. Azuqua was
+  acquired by Okta in 2019 and its workflow orchestration engine and connectors were integrated
+  into Okta Workflows (part of Okta Lifecycle Management). The azuqua.com site now serves an
+  acquisition/end-of-life notice: the product is no longer available for purchase and existing
+  customers are directed to Okta support.
+lifecycle_notice:
+  headline: Azuqua has been integrated into Okta Workflows
+  available_for_purchase: false
+  successor_product: Okta Workflows
+  successor_url: https://www.okta.com/products/workflows/
+  support_contact: azuquasupport@okta.com
+  source: https://azuqua.com/
+versioning:
+  # docs.azuqua.com exposes v1.0 and v2.0 selectors on the legacy ReadMe docs
+  scheme: version-selector
+  versions:
+  - v1.0
+  - v2.0
+  docs: https://docs.azuqua.com/
+deprecation:
+  policy_url: null
+  sunset_header: null
+status_page: null
+sla: null
+deprecated_operations: []
+notes: >-
+  No OpenAPI specification or live operation reference is exposed (docs.azuqua.com/reference is an
+  empty ReadMe shell; /openapi.json returns 404). No status page or formal deprecation policy is
+  published; the acquisition notice is the authoritative end-of-life signal.

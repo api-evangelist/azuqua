@@ -1,0 +1,9 @@
+# Azuqua API Documentation
+
+> Programmatically leverage Azuqua to automate your needs!
+
+## Guides
+- [Documentation](https://docs.azuqua.com/docs.md): Azuqua API documentation
+
+## Changelog
+- [Welcome to Azuqua API](https://docs.azuqua.com/changelog/welcome-to-azuqua-api.md)

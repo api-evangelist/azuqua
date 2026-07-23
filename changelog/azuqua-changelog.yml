@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.azuqua.com/changelog/
+summary: >-
+  The legacy Azuqua API docs (hosted on ReadMe at docs.azuqua.com) expose a changelog surface. Only
+  a single introductory entry is currently published; the product itself is end-of-life and folded
+  into Okta Workflows, so the changelog is effectively frozen.
+scheme: dated-readme-changelog
+current_version: v2.0
+changelog_url: https://docs.azuqua.com/changelog/
+entries:
+- title: Welcome to Azuqua API
+  url: https://docs.azuqua.com/changelog/welcome-to-azuqua-api.md
+  date: null
+  breaking: false
+  highlights:
+  - Introductory changelog entry for the Azuqua API documentation.
+notes: >-
+  Entry date was not machine-readable at capture time (docs host rate-limited the raw markdown
+  fetch); no fabricated date recorded. Recent window only.

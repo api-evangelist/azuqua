@@ -1,8 +1,26 @@
 aid: azuqua
 name: Azuqua
-description: Azuqua is a company surfaced as a portfolio company of insight-partners, techstars and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Azuqua was a Seattle-based integration platform as a service (iPaaS) and no-code workflow-automation
+  company, backed by Insight Partners and Techstars, that let business teams build integrations and
+  automated workflows (FLOs) across SaaS applications such as Salesforce, Slack, Marketo and ServiceNow.
+  Azuqua was acquired by Okta in 2019 and its workflow orchestration engine and connectors were folded
+  into Okta Workflows (part of Okta Lifecycle Management). The standalone product is now end-of-life:
+  azuqua.com serves an acquisition notice and the API is no longer available for purchase. This API
+  Evangelist profile documents the surviving public developer surface (legacy ReadMe docs, changelog,
+  llms.txt) and the product's lifecycle status.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://files.readme.io/72b94d0-small-logo_blue.png
 url: https://raw.githubusercontent.com/api-evangelist/azuqua/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,11 +29,20 @@ x-backed-by:
 - techstars
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: end-of-life
+x-successor: Okta Workflows
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
+- Integration
+- iPaaS
+- Workflow Automation
+- Integration Platform
+- Automation
+- Connectors
+- No-Code
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +52,26 @@ maintainers:
 common:
 - type: Website
   url: https://azuqua.com/
+- type: Documentation
+  url: https://docs.azuqua.com/
+- type: APIReference
+  url: https://docs.azuqua.com/reference
+- type: ChangeLog
+  url: https://docs.azuqua.com/changelog/
+- type: ChangeLog
+  name: Azuqua Changelog (artifact)
+  url: changelog/azuqua-changelog.yml
+- type: LLMsTxt
+  url: llms/azuqua-llms.txt
+- type: Lifecycle
+  url: lifecycle/azuqua-lifecycle.yml
+- type: Deprecation
+  name: Azuqua end-of-life notice
+  url: lifecycle/azuqua-lifecycle.yml
+- type: DomainSecurity
+  url: security/azuqua-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

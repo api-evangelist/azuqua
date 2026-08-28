@@ -9,6 +9,17 @@ description: >-
   azuqua.com serves an acquisition notice and the API is no longer available for purchase. This API
   Evangelist profile documents the surviving public developer surface (legacy ReadMe docs, changelog,
   llms.txt) and the product's lifecycle status.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown

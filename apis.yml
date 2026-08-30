@@ -70,6 +70,11 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/okta/
+  name: Okta
+  x-relationship: acquired
+  x-evidence: "Azuqua was acquired by Okta in 2019 and its workflow orchestration engine and connectors were folded into Okta Workflows (part of Okta Lifecycle Management)."
 - type: Website
   url: https://azuqua.com/
 - type: Documentation

@@ -52,7 +52,7 @@ tags:
 - Company
 - Integration
 - iPaaS
-- Workflow-Automation
+- Workflow Automation
 - Integration Platform
 - Automation
 - Connectors
@@ -66,6 +66,7 @@ tags_raw:
 - Automation
 - Connectors
 - No-Code
+- Workflow-Automation
 apis: []
 maintainers:
 - FN: Kin Lane

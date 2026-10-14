@@ -1,0 +1,27 @@
+generated: '2026-10-14'
+method: derived
+source: openapi/azuqua-page-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: sec0
+  type: apiKey
+  in: header
+  parameter: x-api-accesskey
+  sources:
+  - openapi/azuqua-page-openapi.yml
+- name: sec1
+  type: apiKey
+  in: header
+  parameter: x-api-hash
+  sources:
+  - openapi/azuqua-page-openapi.yml
+- name: sec2
+  type: apiKey
+  in: header
+  parameter: x-api-timestamp
+  sources:
+  - openapi/azuqua-page-openapi.yml

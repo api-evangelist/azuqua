@@ -1,0 +1,16 @@
+generated: '2026-10-14'
+method: none
+source:
+- https://zapier.com/apps/azuqua/integrations
+- https://n8n.io/integrations/azuqua/
+- https://composio.dev/toolkits/azuqua
+- https://monid.ai/tools/azuqua
+checked:
+- https://composio.dev/toolkits/azuqua
+- https://monid.ai/tools/azuqua
+- https://n8n.io/integrations/azuqua/
+- https://zapier.com/apps/azuqua/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []

@@ -1,5 +1,7 @@
 aid: azuqua
+
 name: Azuqua
+
 description: >-
   Azuqua was a Seattle-based integration platform as a service (iPaaS) and no-code workflow-automation
   company, backed by Insight Partners and Techstars, that let business teams build integrations and
@@ -9,6 +11,7 @@ description: >-
   azuqua.com serves an acquisition notice and the API is no longer available for purchase. This API
   Evangelist profile documents the surviving public developer surface (legacy ReadMe docs, changelog,
   llms.txt) and the product's lifecycle status.
+
 deliveryModel:
   model: unknown
   open_source: false
@@ -20,6 +23,7 @@ deliveryModel:
   - none
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -31,23 +35,39 @@ accessModel:
   source: []
   generated: '2026-07-22'
   method: derived
+
 image: https://files.readme.io/72b94d0-small-logo_blue.png
+
 url: https://raw.githubusercontent.com/api-evangelist/azuqua/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: vc-portfolio
+
 x-backed-by:
 - insight-partners
 - techstars
+
 x-tier: stub
+
 x-tier-reason: portfolio-lead
+
 x-status: end-of-life
+
 x-successor: Okta Workflows
+
 specificationVersion: '0.23'
+
 created: '2026-07-17'
+
 modified: '2026-07-18'
+
 x-docs-platform: readme
+
 x-docs-platform-confidence: high
+
 x-docs-platform-checked: 2026-09-19
+
 tags:
 - Company
 - Integration
@@ -57,6 +77,7 @@ tags:
 - Automation
 - Connectors
 - No-Code
+
 tags_raw:
 - Company
 - Integration
@@ -67,13 +88,38 @@ tags_raw:
 - Connectors
 - No-Code
 - Workflow-Automation
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: AgenticAccess
+  url: agentic-access/azuqua-agentic-access.yml
+- type: Spectral
+  url: rules/azuqua-rules.yml
+- type: ErrorCatalog
+  url: errors/azuqua-problem-types.yml
+- type: Conformance
+  url: conformance/azuqua-conformance.yml
+- type: AgentCard
+  url: a2a/azuqua-a2a.yml
+- type: SecurityTxt
+  url: well-known/azuqua-apis-security.txt
+- type: WellKnown
+  url: well-known/azuqua-well-known.yml
+- type: Hosts
+  url: hosts/azuqua-hosts.yml
+- type: Vendors
+  url: vendors/azuqua-vendors.yml
+- type: SDKs
+  url: packages/azuqua-packages.yml
+- type: Packages
+  url: packages/azuqua-packages.yml
+- type: Authentication
+  url: authentication/azuqua-authentication.yml
 - type: ParentCompany
   url: https://apis.io/providers/okta/
   name: Okta
@@ -99,8 +145,25 @@ common:
   url: lifecycle/azuqua-lifecycle.yml
 - type: DomainSecurity
   url: security/azuqua-domain-security.yml
+
+apis:
+- aid: azuqua:azuqua-page
+  name: Azuqua Page Openapi.Yml API
+  description: The Page Openapi.Yml API from Azuqua — 22 operation(s) for page openapi.yml.
+  tags:
+  - Page Openapi.Yml
+  properties:
+  - type: OpenAPI
+    url: openapi/azuqua-page-openapi.yml
+
 x-enrichment:
   date: '2026-07-19'
   status: backfilled
   pass: local-v1
   note: backfilled from .gitignore signal + verified work evidence
+
+x-readme-harvest:
+  date: '2026-10-14'
+  ops: 28
+  tool: harvest-readme-openapi.py
+  portal: https://docs.azuqua.com

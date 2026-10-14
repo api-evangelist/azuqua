@@ -1,0 +1,16 @@
+generated: '2026-10-14'
+method: probed
+generator: harvest-packages.py
+source: registry metadata endpoints (registry.npmjs.org, pypi.org, rubygems.org, api.nuget.org, packagist.org, crates.io)
+ownership_rule: 'official: true only when the registry metadata (homepage, repository, author, URLs) names the provider''s domain (apis.io, authentication/azuqua-authentication.yml,
+  azuqua.com, changelog/azuqua-changelog.yml, lifecycle/azuqua-lifecycle.yml, llms/azuqua-llms.txt, security/azuqua-domain-security.yml) or its
+  accepted GitHub org.'
+packages:
+- name: azuqua
+  registry: npm
+  url: https://www.npmjs.com/package/azuqua
+  language: JavaScript
+  official: true
+  version: 1.0.0
+  published: '2015-11-07'
+  evidence: metadata names azuqua.com

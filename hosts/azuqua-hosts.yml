@@ -1,0 +1,43 @@
+generated: '2026-10-14'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 2
+  other_domain: 1
+  platform: 0
+  roles:
+  - api
+  - docs
+  - website
+hosts:
+- host: apis.io
+  found_by:
+  - pointer
+  types:
+  - ParentCompany
+  serves: []
+  registrable_domain: apis.io
+  role: api
+  relation: other-domain
+- host: azuqua.com
+  found_by:
+  - pointer
+  types:
+  - Website
+  serves: []
+  registrable_domain: azuqua.com
+  role: website
+  relation: own
+- host: docs.azuqua.com
+  found_by:
+  - pointer
+  types:
+  - Documentation
+  - APIReference
+  - ChangeLog
+  serves: []
+  registrable_domain: azuqua.com
+  role: docs
+  relation: own

@@ -1,0 +1,153 @@
+generated: '2026-10-14'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/azuqua-page-openapi.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: derived
+note: No MCP server was found. No probe result in the dossier. Candidate tools below are derived from the 28 operation(s) in the provider's own
+  OpenAPI (28 listed); they describe what a server WOULD expose, not one that exists.
+tools:
+- name: delete_account
+  operationId: delete-account
+  method: DELETE
+  path: /v2/account/{account_id}
+  description: Delete Account
+- name: read_account
+  operationId: read-account
+  method: GET
+  path: /v2/account/{account_id}
+  description: Read Account
+- name: share_account
+  operationId: share-account
+  method: PUT
+  path: /v2/account/{account_id}/user/{user_id}/permissions
+  description: Update Account Permissions for User
+- name: get_account
+  operationId: get-account
+  method: GET
+  path: /v2/accounts
+  description: Read All Accounts
+- name: get_connector_metadata
+  operationId: get-connector-metadata
+  method: GET
+  path: /v2/connectors/{connector_name}/{connector_version}
+  description: Read Connector By Version
+- name: delete_flo
+  operationId: delete-flo
+  method: DELETE
+  path: /v2/flo/{flo_id}
+  description: Delete FLO
+- name: read_flo
+  operationId: read-flo
+  method: GET
+  path: /v2/flo/{flo_id}
+  description: Read FLO
+- name: update_flo_metadata
+  operationId: update-flo-metadata
+  method: PUT
+  path: /v2/flo/{flo_id}
+  description: Update FLO Metadata
+- name: get_accounts_for_flo
+  operationId: get-accounts-for-flo
+  method: GET
+  path: /v2/flo/{flo_id}/accounts
+  description: Read Accounts for FLO
+- name: duplicate_flo
+  operationId: duplicate-flo
+  method: POST
+  path: /v2/flo/{flo_id}/copy
+  description: Copy FLO
+- name: copy_flo_into_organization
+  operationId: copy-flo-into-organization
+  method: POST
+  path: /v2/flo/{flo_id}/copy/org/{org_id}
+  description: Copy FLO into Organization
+- name: disable_flo
+  operationId: disable-flo
+  method: PUT
+  path: /v2/flo/{flo_id}/disable
+  description: Disable FLO
+- name: enable_flo
+  operationId: enable-flo
+  method: PUT
+  path: /v2/flo/{flo_id}/enable
+  description: Enable FLO
+- name: get_flo_inputs
+  operationId: get-flo-inputs
+  method: GET
+  path: /v2/flo/{flo_id}/inputs
+  description: Read FLO Inputs
+- name: move_flo_to_folder
+  operationId: move-flo-to-folder
+  method: PUT
+  path: /v2/flo/{flo_id}/move/folder/{folder_id}
+  description: Move FLO to Folder
+- name: create_folder
+  operationId: create-folder
+  method: POST
+  path: /v2/folder
+  description: Create Folder
+- name: delete_tab
+  operationId: delete-tab
+  method: DELETE
+  path: /v2/folder/{folder_id}
+  description: Delete Folder
+- name: read_folder
+  operationId: read-folder
+  method: GET
+  path: /v2/folder/{folder_id}
+  description: Read Folder
+- name: update_folder
+  operationId: update-folder
+  method: PUT
+  path: /v2/folder/{folder_id}
+  description: Update Folder
+- name: read_flos_in_folder
+  operationId: read-flos-in-folder
+  method: GET
+  path: /v2/folder/{folder_id}/flos
+  description: Read FLOs in Folder
+- name: add_user_to_tab_1
+  operationId: add-user-to-tab-1
+  method: PUT
+  path: /v2/folder/{folder_id}/user/{user_id}/permissions
+  description: Update User Permissions to Folder
+- name: read_folder_users
+  operationId: read-folder-users
+  method: GET
+  path: /v2/folder/{folder_id}/users
+  description: Read Folder Users
+- name: get_folders
+  operationId: get-folders
+  method: GET
+  path: /v2/folders
+  description: Read All Folders
+- name: read_organization
+  operationId: read-organization
+  method: GET
+  path: /v2/org
+  description: Read Organization
+- name: update_org
+  operationId: update-org
+  method: PUT
+  path: /v2/org
+  description: Update Org
+- name: get_flos_in_organization
+  operationId: get-flos-in-organization
+  method: GET
+  path: /v2/org/flos
+  description: Read All FLOs
+- name: update_user_role
+  operationId: update-user-role
+  method: PUT
+  path: /v2/org/user/{user_id}/permissions
+  description: Update User Role in Organization
+- name: read_user_orgs
+  operationId: read-user-orgs
+  method: GET
+  path: /v2/user/orgs
+  description: Read User Orgs

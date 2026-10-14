@@ -2,7 +2,7 @@
 
 > Programmatically leverage Azuqua to automate your needs!
 
-## Guides
+## Guides: Documentation
 - [Documentation](https://docs.azuqua.com/docs.md): Azuqua API documentation
 
 ## Changelog

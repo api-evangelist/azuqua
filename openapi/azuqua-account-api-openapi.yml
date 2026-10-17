@@ -1,0 +1,198 @@
+openapi: 3.2.0
+info:
+  title: page Account API
+  version: '2.0'
+servers:
+- url: https://api.azuqua.com
+security:
+- sec0: []
+  sec1: []
+  sec2: []
+tags:
+- name: Account
+paths:
+  /v2/account/{account_id}:
+    delete:
+      summary: Delete Account
+      description: Delete a given account.
+      operationId: delete-account
+      parameters:
+      - name: account_id
+        in: path
+        description: The ID of the account you'd like to delete.
+        schema:
+          type: integer
+          format: int32
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{ \n  \"deleted\": true \n}"
+              schema:
+                type: object
+                properties:
+                  deleted:
+                    type: boolean
+                    example: true
+                    default: true
+        '403':
+          description: '403'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//will occur if either you don't have access to the resource or if the resource doesn't exist\n{ \n  \"errors\": \n   [ \n     { \n       \"title\" : 'Forbidden',\n       \"message\": 'Forbidden. Refer to documentation about how to use this route'\n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Account
+    get:
+      summary: Read Account
+      description: Read details about a given account.
+      operationId: read-account
+      parameters:
+      - name: account_id
+        in: path
+        description: The ID of the account you would like to read.
+        schema:
+          type: integer
+          format: int32
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{ \n  \"id\": 301,\n  \"name\": 'Alpha Send Grid',\n  \"created\": '2017-07-12T19:40:17.106Z',\n  \"updated\": '2017-07-12T19:40:17.106Z',\n  \"privileges\": //the privileges you have on this account\n   [ \n     { \n       \"resource\": 'CONFIG',\n       \"privilege\": 'CHANGEROLE' \n     },\n     { \n       \"resource\": 'CONFIG', \n       \"privilege\": 'SHARE' \n     },\n     { \n       \"resource\": 'CONFIG', \n       \"privilege\": 'DELETE' \n     },\n     { \n       \"resource\": 'CONFIG', \n       \"privilege\": 'APPLYCONFIG' \n     },\n     { \n       \"resource\": 'CONFIG',\n       \"privilege\": 'EXECUTE'\n     },\n     {\n       \"resource\": 'CONFIG', \n       \"privilege\": 'EXECUTE'\n     } \n   ],\n  \"role_type\": 'CREATOR', //can be \"CREATOR\", \"OWNER\", \"COLLABORATOR\", \"USER\"\n  \"connector_name\": 'alphasendgrid' \n}"
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//occurs if the connector does not exist, or you do not have access to the requested connector\n{ \n  \"errors\": \n   [ \n     { \n       \"title\": 'Not Found',\n       \"message\": 'Not Found. Check that you have access to resource'\n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Account
+  /v2/account/{account_id}/user/{user_id}/permissions:
+    put:
+      summary: Update Account Permissions for User
+      description: Update the access level a given user will have on a given on an account.
+      operationId: share-account
+      parameters:
+      - name: account_id
+        in: path
+        description: The ID of the account you'd like to update permissions on
+        schema:
+          type: integer
+          format: int32
+        required: true
+      - name: user_id
+        in: path
+        description: The ID of the user you would like to update permissions on
+        schema:
+          type: integer
+          format: int32
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - role
+              properties:
+                role:
+                  type: string
+                  description: The role you would like to promote/demote the given user to on the given account. May be "NONE", "RUN", "USE", "EDIT".
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{ "changed": true }'
+              schema:
+                type: object
+                properties:
+                  changed:
+                    type: boolean
+                    example: true
+                    default: true
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if you pass in an invalid value as the \"role\" parameter \n{ \n  \"errors\": \n   [ \n     { \n       \"title\": 'Bad Request',\n       \"message\": 'Error at parameter role: No enum match for: \"INVALID_NAME_HERE\"' \n     } \n   ] \n}"
+        '403':
+          description: '403'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//occurs if you do not have access to either the account or user, or if either of those resources do not exist\n{\n  \"errors\": \n   [ \n     { \n       \"title\": 'Forbidden',\n       \"message\": 'Forbidden. Refer to documentation about how to use this route' \n     } \n   ] \n}\n"
+      deprecated: false
+      tags:
+      - Account
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-accesskey
+    sec1:
+      type: apiKey
+      in: header
+      name: x-api-hash
+    sec2:
+      type: apiKey
+      in: header
+      name: x-api-timestamp
+x-readme-fauxas: true
+x-provenance:
+  method: searched
+  source: https://docs.azuqua.com/reference
+  harvested: '2026-10-14'
+  tool: harvest-readme-openapi.py
+  note: Assembled verbatim from the OpenAPI definition ReadMe embeds in each operation page of the provider's developer portal; paths and components merged by API title, nothing authored.
+  assembled_from:
+  - https://docs.azuqua.com/reference/add-user-to-tab-1.md
+  - https://docs.azuqua.com/reference/copy-flo-into-organization.md
+  - https://docs.azuqua.com/reference/create-folder.md
+  - https://docs.azuqua.com/reference/delete-account.md
+  - https://docs.azuqua.com/reference/delete-flo.md
+  - https://docs.azuqua.com/reference/delete-tab.md
+  - https://docs.azuqua.com/reference/disable-flo.md
+  - https://docs.azuqua.com/reference/duplicate-flo.md
+  - https://docs.azuqua.com/reference/enable-flo.md
+  - https://docs.azuqua.com/reference/get-account.md
+  - https://docs.azuqua.com/reference/get-accounts-for-flo.md
+  - https://docs.azuqua.com/reference/get-connector-metadata.md
+  - https://docs.azuqua.com/reference/get-flo-inputs.md
+  - https://docs.azuqua.com/reference/get-flos-in-organization.md
+  - https://docs.azuqua.com/reference/get-folders.md
+  - https://docs.azuqua.com/reference/move-flo-to-folder.md
+  - https://docs.azuqua.com/reference/read-account.md
+  - https://docs.azuqua.com/reference/read-flo.md
+  - https://docs.azuqua.com/reference/read-flos-in-folder.md
+  - https://docs.azuqua.com/reference/read-folder-users.md
+  - https://docs.azuqua.com/reference/read-folder.md
+  - https://docs.azuqua.com/reference/read-organization.md
+  - https://docs.azuqua.com/reference/read-user-orgs.md
+  - https://docs.azuqua.com/reference/share-account.md
+  - https://docs.azuqua.com/reference/update-flo-metadata.md
+  - https://docs.azuqua.com/reference/update-folder.md
+  - https://docs.azuqua.com/reference/update-org.md
+  - https://docs.azuqua.com/reference/update-user-role.md
+  merge:
+    pages: 28
+    deduped: 81
+    conflicts_kept_first: 0

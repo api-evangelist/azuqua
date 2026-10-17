@@ -1,0 +1,63 @@
+{
+  "provider": "azuqua",
+  "sources": [
+    "azuqua-page-openapi.yml"
+  ],
+  "outputs": [
+    "azuqua-account-api-openapi.yml",
+    "azuqua-accounts-api-openapi.yml",
+    "azuqua-connectors-api-openapi.yml",
+    "azuqua-flo-api-openapi.yml",
+    "azuqua-folder-api-openapi.yml",
+    "azuqua-folders-api-openapi.yml",
+    "azuqua-org-api-openapi.yml",
+    "azuqua-user-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/azuqua-page-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "azuqua-page-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "azuqua-page-openapi.yml: tagged paths DELETE /v2/account/{account_id} -> Account",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/account/{account_id} -> Account",
+    "azuqua-page-openapi.yml: tagged paths PUT /v2/account/{account_id}/user/{user_id}/permissions -> Account",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/accounts -> Accounts",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/connectors/{connector_name}/{connector_version} -> Connectors",
+    "azuqua-page-openapi.yml: tagged paths DELETE /v2/flo/{flo_id} -> Flo",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/flo/{flo_id} -> Flo",
+    "azuqua-page-openapi.yml: tagged paths PUT /v2/flo/{flo_id} -> Flo",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/flo/{flo_id}/accounts -> Flo",
+    "azuqua-page-openapi.yml: tagged paths POST /v2/flo/{flo_id}/copy -> Flo",
+    "azuqua-page-openapi.yml: tagged paths POST /v2/flo/{flo_id}/copy/org/{org_id} -> Flo",
+    "azuqua-page-openapi.yml: tagged paths PUT /v2/flo/{flo_id}/disable -> Flo",
+    "azuqua-page-openapi.yml: tagged paths PUT /v2/flo/{flo_id}/enable -> Flo",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/flo/{flo_id}/inputs -> Flo",
+    "azuqua-page-openapi.yml: tagged paths PUT /v2/flo/{flo_id}/move/folder/{folder_id} -> Flo",
+    "azuqua-page-openapi.yml: tagged paths POST /v2/folder -> Folder",
+    "azuqua-page-openapi.yml: tagged paths DELETE /v2/folder/{folder_id} -> Folder",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/folder/{folder_id} -> Folder",
+    "azuqua-page-openapi.yml: tagged paths PUT /v2/folder/{folder_id} -> Folder",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/folder/{folder_id}/flos -> Folder",
+    "azuqua-page-openapi.yml: tagged paths PUT /v2/folder/{folder_id}/user/{user_id}/permissions -> Folder",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/folder/{folder_id}/users -> Folder",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/folders -> Folders",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/org -> Org",
+    "azuqua-page-openapi.yml: tagged paths PUT /v2/org -> Org",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/org/flos -> Org",
+    "azuqua-page-openapi.yml: tagged paths PUT /v2/org/user/{user_id}/permissions -> Org",
+    "azuqua-page-openapi.yml: tagged paths GET /v2/user/orgs -> User",
+    "azuqua-page-openapi.yml: declared missing tag: Account",
+    "azuqua-page-openapi.yml: declared missing tag: Accounts",
+    "azuqua-page-openapi.yml: declared missing tag: Connectors",
+    "azuqua-page-openapi.yml: declared missing tag: Flo",
+    "azuqua-page-openapi.yml: declared missing tag: Folder",
+    "azuqua-page-openapi.yml: declared missing tag: Folders",
+    "azuqua-page-openapi.yml: declared missing tag: Org",
+    "azuqua-page-openapi.yml: declared missing tag: User",
+    "apis.yml register: written (+8 apis, 8 total)"
+  ],
+  "skipped": []
+}

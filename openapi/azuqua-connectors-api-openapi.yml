@@ -1,0 +1,103 @@
+openapi: 3.2.0
+info:
+  title: page Connectors API
+  version: '2.0'
+servers:
+- url: https://api.azuqua.com
+security:
+- sec0: []
+  sec1: []
+  sec2: []
+tags:
+- name: Connectors
+paths:
+  /v2/connectors/{connector_name}/{connector_version}:
+    get:
+      summary: Read Connector By Version
+      description: Read information about a connector at a given version.
+      operationId: get-connector-metadata
+      parameters:
+      - name: connector_name
+        in: path
+        description: The name of the id name of a connector (the non-capitalized name that appears in connector builder, or on the "method name" option on a card's settings page.
+        schema:
+          type: string
+        required: true
+      - name: connector_version
+        in: path
+        description: The version number you'd like to read information from.
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{ \n  \"id\": 499,\n  \"name\": 'gameofflosalpha',\n  \"methods\": \n   [ \n     { \n       \"type\": 'action', //can also be 'metadata' or 'event'\n       \"name\": 'getCharacter',\n       \"displayName\": 'Get Character',\n       \"description\": 'This is my description.' \n     }\n   ]\n}"
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//occurs if a given connector or a requested version does not exist, or you do not have permission to that connector\n{ \n  errors: \n   [ \n     { \n       title: 'Not Found',\n       message: 'Not Found. Check that you have access to resource' \n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Connectors
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-accesskey
+    sec1:
+      type: apiKey
+      in: header
+      name: x-api-hash
+    sec2:
+      type: apiKey
+      in: header
+      name: x-api-timestamp
+x-readme-fauxas: true
+x-provenance:
+  method: searched
+  source: https://docs.azuqua.com/reference
+  harvested: '2026-10-14'
+  tool: harvest-readme-openapi.py
+  note: Assembled verbatim from the OpenAPI definition ReadMe embeds in each operation page of the provider's developer portal; paths and components merged by API title, nothing authored.
+  assembled_from:
+  - https://docs.azuqua.com/reference/add-user-to-tab-1.md
+  - https://docs.azuqua.com/reference/copy-flo-into-organization.md
+  - https://docs.azuqua.com/reference/create-folder.md
+  - https://docs.azuqua.com/reference/delete-account.md
+  - https://docs.azuqua.com/reference/delete-flo.md
+  - https://docs.azuqua.com/reference/delete-tab.md
+  - https://docs.azuqua.com/reference/disable-flo.md
+  - https://docs.azuqua.com/reference/duplicate-flo.md
+  - https://docs.azuqua.com/reference/enable-flo.md
+  - https://docs.azuqua.com/reference/get-account.md
+  - https://docs.azuqua.com/reference/get-accounts-for-flo.md
+  - https://docs.azuqua.com/reference/get-connector-metadata.md
+  - https://docs.azuqua.com/reference/get-flo-inputs.md
+  - https://docs.azuqua.com/reference/get-flos-in-organization.md
+  - https://docs.azuqua.com/reference/get-folders.md
+  - https://docs.azuqua.com/reference/move-flo-to-folder.md
+  - https://docs.azuqua.com/reference/read-account.md
+  - https://docs.azuqua.com/reference/read-flo.md
+  - https://docs.azuqua.com/reference/read-flos-in-folder.md
+  - https://docs.azuqua.com/reference/read-folder-users.md
+  - https://docs.azuqua.com/reference/read-folder.md
+  - https://docs.azuqua.com/reference/read-organization.md
+  - https://docs.azuqua.com/reference/read-user-orgs.md
+  - https://docs.azuqua.com/reference/share-account.md
+  - https://docs.azuqua.com/reference/update-flo-metadata.md
+  - https://docs.azuqua.com/reference/update-folder.md
+  - https://docs.azuqua.com/reference/update-org.md
+  - https://docs.azuqua.com/reference/update-user-role.md
+  merge:
+    pages: 28
+    deduped: 81
+    conflicts_kept_first: 0

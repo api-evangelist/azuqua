@@ -1,0 +1,478 @@
+openapi: 3.2.0
+info:
+  title: page Flo API
+  version: '2.0'
+servers:
+- url: https://api.azuqua.com
+security:
+- sec0: []
+  sec1: []
+  sec2: []
+tags:
+- name: Flo
+paths:
+  /v2/flo/{flo_id}:
+    delete:
+      summary: Delete FLO
+      description: Delete a FLO with a given ID.
+      operationId: delete-flo
+      parameters:
+      - name: flo_id
+        in: path
+        description: The ID of the FLO you'd like to delete.
+        schema:
+          type: integer
+          format: int32
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{ "deleted": true }'
+              schema:
+                type: object
+                properties:
+                  deleted:
+                    type: boolean
+                    example: true
+                    default: true
+        '403':
+          description: '403'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if you either can't access the FLO, or if the FLO does not exist.\n{\n  \"errors\": \n   [ \n     { \n       \"title\": 'Forbidden',\n       \"message\": 'Forbidden. Refer to documentation about how to use this route' \n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Flo
+    get:
+      summary: Read FLO
+      description: Reads metadata about a FLO.
+      operationId: read-flo
+      parameters:
+      - name: flo_id
+        in: path
+        description: The ID of the FLO you would like to read.
+        schema:
+          type: integer
+          format: int32
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{ \n  \"id\": 1234,\n  \"alias\": 'this_is_my_alias',\n  \"name\": 'Test with Event',\n  \"type\": null,\n  \"active\": false,\n  \"published\": false,\n  \"security_level\": null,\n  \"client_token\": 'this_is_the_client_token_for_the_flo',\n  \"description\": '',\n  \"created\": '2017-07-31T16:35:48.624Z',\n  \"updated\": '2017-07-31T17:00:53.624Z',\n  \"privileges\": \n   [ { \"resource\": 'FLO', \"privilege\": 'CHANGEROLE' },\n     { \"resource\": 'FLO', \"privilege\": 'WRITE' },\n     { \"resource\": 'FLO', \"privilege\": 'READDATA' },\n     { \"resource\": 'FLO', \"privilege\": 'ADD' },\n     { \"resource\": 'FLO', \"privilege\": 'REMOVE' },\n     { \"resource\": 'FLO', \"privilege\": 'DUPLICATE' },\n     { \"resource\": 'FLO', \"privilege\": 'SHARE' },\n     { \"resource\": 'FLO', \"privilege\": 'DELETE' },\n     { \"resource\": 'FLO', \"privilege\": 'MOVE' },\n     { \"resource\": 'FLO', \"privilege\": 'READ' },\n     { \"resource\": 'FLO', \"privilege\": 'LIST' },\n     { \"resource\": 'FLO', \"privilege\": 'EXECUTE' } \n   ],\n  \"role_type\": 'CREATOR' \n}\n"
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if the FLO does not exist, or you do not have access to it\n{ \n  \"errors\": \n   [ \n     { \n       \"title\": 'Not Found',\n       \"message\": 'Not Found. Check that you have access to resource' \n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Flo
+    put:
+      summary: Update FLO Metadata
+      description: Update the metadata (name & decription) of a FLO
+      operationId: update-flo-metadata
+      parameters:
+      - name: flo_id
+        in: path
+        description: The ID of the FLO you'd like to upate
+        schema:
+          type: integer
+          format: int32
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The name of the FLO.
+                description:
+                  type: string
+                  description: The description of the FLO.
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{ "updated": true }'
+              schema:
+                type: object
+                properties:
+                  updated:
+                    type: boolean
+                    example: true
+                    default: true
+        '403':
+          description: '403'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if the FLO doesn't exist or you do not have access to it.\n{\n  \"errors\": \n   [ \n     { \n       \"title\": 'Forbidden',\n       \"message\": 'Forbidden. Refer to documentation about how to use this route' \n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Flo
+  /v2/flo/{flo_id}/accounts:
+    get:
+      summary: Read Accounts for FLO
+      description: Get all accounts associated to a FLO.
+      operationId: get-accounts-for-flo
+      parameters:
+      - name: flo_id
+        in: path
+        description: The ID of the FLO.
+        schema:
+          type: integer
+          format: int32
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "[ \n  { \n    \"id\": 123,\n    \"name\": 'account_name',\n    \"created\": '2017-02-02T22:49:49.439Z',\n    \"updated\": '2017-05-10T18:17:06.517Z',\n    \"role_type\": 'USER',\n    \"privileges\": [ [Object], [Object] ],\n    \"connector_name\": 'connector_name' \n  } \n]"
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if the FLO does not exist, you do not have permission to view it, or there are no accounts associated to a FLO\n{ \n  \"errors\": \n   [ \n     { \n       \"title\": 'Not Found',\n       \"message\": 'Not Found. Check that you have access to resource'\n     }\n   ]\n}"
+      deprecated: false
+      tags:
+      - Flo
+  /v2/flo/{flo_id}/copy:
+    post:
+      summary: Copy FLO
+      description: Copy a FLO into a provided folder. If the folder is not provided, this route will copy the FLO into the same folder as the original FLO.
+      operationId: duplicate-flo
+      parameters:
+      - name: flo_id
+        in: path
+        description: The ID of the FLO you would like to copy
+        schema:
+          type: integer
+          format: int32
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                folder_id:
+                  type: integer
+                  description: (Optional) The ID of the folder you'd like the new FLO to be moved to. If not provided, will make a copy FLO in the same folder as its source FLO.
+                  format: int32
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{ \n  \"copied\": true, \n  \"id\": 1795 \n}"
+              schema:
+                type: object
+                properties:
+                  copied:
+                    type: boolean
+                    example: true
+                    default: true
+                  id:
+                    type: integer
+                    example: 1795
+                    default: 0
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if the flo or folder do not exist, or if you do not have access to them\n{\n  \"errors\": \n   [ \n     { \n       \"title\": 'Forbidden',\n       \"message\": 'Forbidden. Refer to documentation about how to use this route' \n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Flo
+  /v2/flo/{flo_id}/copy/org/{org_id}:
+    post:
+      summary: Copy FLO into Organization
+      description: Copy a FLO into a provided organization, while optionally copying it into a specified folder.
+      operationId: copy-flo-into-organization
+      parameters:
+      - name: flo_id
+        in: path
+        description: The ID of the FLO you would like to make a copy of, to send to another org.
+        schema:
+          type: integer
+          format: int32
+        required: true
+      - name: org_id
+        in: path
+        description: The ID of the organization you would like to copy the FLO into. You must have permission to access the target organization.
+        schema:
+          type: integer
+          format: int32
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                folder_id:
+                  type: integer
+                  description: (Optional) The ID of the folder you would like to copy the FLO into in the destination organization. If not provided, will copy into "My FLOs" tab in destination organization
+                  format: int32
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"copied\": true,\n  \"id\": 123 \n}"
+              schema:
+                type: object
+                properties:
+                  copied:
+                    type: boolean
+                    example: true
+                    default: true
+                  id:
+                    type: integer
+                    example: 123
+                    default: 0
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if you don't have access to the org, flo, or folder, or they don't exist\n{ \n  \"errors\": \n   [ \n     { \n       \"title\": 'Not Found',\n       \"message\": 'Not Found. Check that you have access to resource'\n     } \n   ]\n}"
+      deprecated: false
+      tags:
+      - Flo
+  /v2/flo/{flo_id}/disable:
+    put:
+      summary: Disable FLO
+      description: Disable, or "Turn Off", a given FLO.
+      operationId: disable-flo
+      parameters:
+      - name: flo_id
+        in: path
+        description: The ID of the FLO you would like to disable, or "turn off".
+        schema:
+          type: integer
+          format: int32
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{ "disabled": true }'
+              schema:
+                type: object
+                properties:
+                  disabled:
+                    type: boolean
+                    example: true
+                    default: true
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if the given FLO does not exist or if you do not have access to it\n{ \n  \"errors\": \n   [ \n     { \n       \"title\": 'Not Found',\n       \"message\": 'Not Found. Check that you have access to resource'\n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Flo
+  /v2/flo/{flo_id}/enable:
+    put:
+      summary: Enable FLO
+      description: Enable, or "Turn On", a given FLO.
+      operationId: enable-flo
+      parameters:
+      - name: flo_id
+        in: path
+        description: The ID of the FLO you would like to enable, or "turn on".
+        schema:
+          type: integer
+          format: int32
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{ "enabled": true }'
+              schema:
+                type: object
+                properties:
+                  enabled:
+                    type: boolean
+                    example: true
+                    default: true
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if the FLO does not exist or you do not have access to it\n{ \n  \"errors\": \n   [ \n     { \n       \"title\": 'Not Found',\n       \"message\": 'Not Found. Check that you have access to resource' \n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Flo
+  /v2/flo/{flo_id}/inputs:
+    get:
+      summary: Read FLO Inputs
+      description: Grab a list of the inputs of a given FLO.
+      operationId: get-flo-inputs
+      parameters:
+      - name: flo_id
+        in: path
+        description: The ID of the FLO you would like to grab inputs from.
+        schema:
+          type: integer
+          format: int32
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "[ \n  { \n    \"key\": 'headers',\n    \"defaultValue\": {},\n    \"group\": 'raw',\n    \"collection\": false,\n    \"type\": 'object',\n    \"metadata\": { \n      \"hidden\": true, \n      \"index\": 0, \n      \"typeLocked\": true \n    } \n  },\n  { \n    \"key\": 'body',\n    \"defaultValue\": '',\n    \"group\": 'raw',\n    \"collection\": false,\n    \"type\": 'string',\n    \"metadata\": { \n      \"hidden\": true, \n      \"index\": 1 \n    } \n  },\n  { \n    \"key\": 'query',\n    \"defaultValue\": '',\n    \"group\": 'raw',\n    \"collection\": false,\n    \"type\": 'string',\n    \"metadata\": { \n      \"hidden\": true, \n      \"index\": 2 \n    } \n  },\n  { \n    \"key\": 'Body Item 1',\n    \"defaultValue\": '',\n    \"group\": 'body',\n    \"collection\": false,\n    \"type\": 'string',\n    \"metadata\": { \n      \"index\": 4, \n      \"custom\": true \n    } \n  },\n  { \n    \"key\": 'Header 1',\n    \"defaultValue\": '',\n    \"group\": 'headers',\n    \"collection\": false,\n    \"type\": 'string',\n    \"metadata\": { \n      \"index\": 5, \n      \"custom\": true \n    } \n  },\n  { \n    \"key\": 'Query 1',\n    \"defaultValue\": '',\n    \"group\": 'query',\n    \"collection\": false,\n    \"type\": 'string',\n    \"metadata\": { \n      \"index\": 6, \n      \"custom\": true \n    } \n  } \n]"
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if you do not have access to the given FLO, or if it does not exist\n{ \n  \"errors\": \n   [ \n     { \n       \"title\": 'Not Found',\n       \"message\": 'Not Found. Check that you have access to resource' \n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Flo
+  /v2/flo/{flo_id}/move/folder/{folder_id}:
+    put:
+      summary: Move FLO to Folder
+      description: Move a FLO into another folder.
+      operationId: move-flo-to-folder
+      parameters:
+      - name: flo_id
+        in: path
+        description: The ID of the FLO you would like to move.
+        schema:
+          type: integer
+          format: int32
+        required: true
+      - name: folder_id
+        in: path
+        description: The ID of the folder you'd like to move the FLO into.
+        schema:
+          type: integer
+          format: int32
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{ "moved": true }'
+              schema:
+                type: object
+                properties:
+                  moved:
+                    type: boolean
+                    example: true
+                    default: true
+        '403':
+          description: '403'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "//Occurs if the FLO or folder doesn't exist, or if you do not have access to it\n{\n  \"errors\": \n   [ \n     { \n       \"title\": 'Forbidden',\n       \"message\": 'Forbidden. Refer to documentation about how to use this route' \n     } \n   ] \n}"
+      deprecated: false
+      tags:
+      - Flo
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-accesskey
+    sec1:
+      type: apiKey
+      in: header
+      name: x-api-hash
+    sec2:
+      type: apiKey
+      in: header
+      name: x-api-timestamp
+x-readme-fauxas: true
+x-provenance:
+  method: searched
+  source: https://docs.azuqua.com/reference
+  harvested: '2026-10-14'
+  tool: harvest-readme-openapi.py
+  note: Assembled verbatim from the OpenAPI definition ReadMe embeds in each operation page of the provider's developer portal; paths and components merged by API title, nothing authored.
+  assembled_from:
+  - https://docs.azuqua.com/reference/add-user-to-tab-1.md
+  - https://docs.azuqua.com/reference/copy-flo-into-organization.md
+  - https://docs.azuqua.com/reference/create-folder.md
+  - https://docs.azuqua.com/reference/delete-account.md
+  - https://docs.azuqua.com/reference/delete-flo.md
+  - https://docs.azuqua.com/reference/delete-tab.md
+  - https://docs.azuqua.com/reference/disable-flo.md
+  - https://docs.azuqua.com/reference/duplicate-flo.md
+  - https://docs.azuqua.com/reference/enable-flo.md
+  - https://docs.azuqua.com/reference/get-account.md
+  - https://docs.azuqua.com/reference/get-accounts-for-flo.md
+  - https://docs.azuqua.com/reference/get-connector-metadata.md
+  - https://docs.azuqua.com/reference/get-flo-inputs.md
+  - https://docs.azuqua.com/reference/get-flos-in-organization.md
+  - https://docs.azuqua.com/reference/get-folders.md
+  - https://docs.azuqua.com/reference/move-flo-to-folder.md
+  - https://docs.azuqua.com/reference/read-account.md
+  - https://docs.azuqua.com/reference/read-flo.md
+  - https://docs.azuqua.com/reference/read-flos-in-folder.md
+  - https://docs.azuqua.com/reference/read-folder-users.md
+  - https://docs.azuqua.com/reference/read-folder.md
+  - https://docs.azuqua.com/reference/read-organization.md
+  - https://docs.azuqua.com/reference/read-user-orgs.md
+  - https://docs.azuqua.com/reference/share-account.md
+  - https://docs.azuqua.com/reference/update-flo-metadata.md
+  - https://docs.azuqua.com/reference/update-folder.md
+  - https://docs.azuqua.com/reference/update-org.md
+  - https://docs.azuqua.com/reference/update-user-role.md
+  merge:
+    pages: 28
+    deduped: 81
+    conflicts_kept_first: 0

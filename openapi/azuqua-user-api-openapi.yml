@@ -1,0 +1,83 @@
+openapi: 3.2.0
+info:
+  title: page User API
+  version: '2.0'
+servers:
+- url: https://api.azuqua.com
+security:
+- sec0: []
+  sec1: []
+  sec2: []
+tags:
+- name: User
+paths:
+  /v2/user/orgs:
+    get:
+      summary: Read User Orgs
+      description: Get all the orgs that you belong to.
+      operationId: read-user-orgs
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "[ \n  { \n    \"id\": 123,\n    \"name\": 'My Org',\n    \"display_name\": 'My Org (Display)',\n    \"plan\": '123',\n    \"active\": true,\n    \"created\": '2017-01-31T20:38:15.979Z',\n    \"updated\": '2017-07-31T22:55:05.274Z',\n    \"role_type\": 'ADMIN',\n    \"privileges\": \n    [ \n      [Object], \n      [Object], \n      [Object], \n      [Object], \n      [Object], \n      [Object] \n    ] \n  }\n]"
+      deprecated: false
+      tags:
+      - User
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: header
+      name: x-api-accesskey
+    sec1:
+      type: apiKey
+      in: header
+      name: x-api-hash
+    sec2:
+      type: apiKey
+      in: header
+      name: x-api-timestamp
+x-readme-fauxas: true
+x-provenance:
+  method: searched
+  source: https://docs.azuqua.com/reference
+  harvested: '2026-10-14'
+  tool: harvest-readme-openapi.py
+  note: Assembled verbatim from the OpenAPI definition ReadMe embeds in each operation page of the provider's developer portal; paths and components merged by API title, nothing authored.
+  assembled_from:
+  - https://docs.azuqua.com/reference/add-user-to-tab-1.md
+  - https://docs.azuqua.com/reference/copy-flo-into-organization.md
+  - https://docs.azuqua.com/reference/create-folder.md
+  - https://docs.azuqua.com/reference/delete-account.md
+  - https://docs.azuqua.com/reference/delete-flo.md
+  - https://docs.azuqua.com/reference/delete-tab.md
+  - https://docs.azuqua.com/reference/disable-flo.md
+  - https://docs.azuqua.com/reference/duplicate-flo.md
+  - https://docs.azuqua.com/reference/enable-flo.md
+  - https://docs.azuqua.com/reference/get-account.md
+  - https://docs.azuqua.com/reference/get-accounts-for-flo.md
+  - https://docs.azuqua.com/reference/get-connector-metadata.md
+  - https://docs.azuqua.com/reference/get-flo-inputs.md
+  - https://docs.azuqua.com/reference/get-flos-in-organization.md
+  - https://docs.azuqua.com/reference/get-folders.md
+  - https://docs.azuqua.com/reference/move-flo-to-folder.md
+  - https://docs.azuqua.com/reference/read-account.md
+  - https://docs.azuqua.com/reference/read-flo.md
+  - https://docs.azuqua.com/reference/read-flos-in-folder.md
+  - https://docs.azuqua.com/reference/read-folder-users.md
+  - https://docs.azuqua.com/reference/read-folder.md
+  - https://docs.azuqua.com/reference/read-organization.md
+  - https://docs.azuqua.com/reference/read-user-orgs.md
+  - https://docs.azuqua.com/reference/share-account.md
+  - https://docs.azuqua.com/reference/update-flo-metadata.md
+  - https://docs.azuqua.com/reference/update-folder.md
+  - https://docs.azuqua.com/reference/update-org.md
+  - https://docs.azuqua.com/reference/update-user-role.md
+  merge:
+    pages: 28
+    deduped: 81
+    conflicts_kept_first: 0

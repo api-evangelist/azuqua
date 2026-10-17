@@ -147,15 +147,70 @@ common:
   url: security/azuqua-domain-security.yml
 
 apis:
-- aid: azuqua:azuqua-page
-  name: Azuqua Page Openapi.Yml API
-  description: The Page Openapi.Yml API from Azuqua — 22 operation(s) for page openapi.yml.
+- aid: azuqua:azuqua-account-api
+  name: Azuqua Account API
+  description: The Account API from Azuqua — 2 operation(s) for account.
   tags:
-  - Page Openapi.Yml
+  - Account
   properties:
   - type: OpenAPI
-    url: openapi/azuqua-page-openapi.yml
-
+    url: openapi/azuqua-account-api-openapi.yml
+- aid: azuqua:azuqua-accounts-api
+  name: Azuqua Accounts API
+  description: The Accounts API from Azuqua — 1 operation(s) for accounts.
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/azuqua-accounts-api-openapi.yml
+- aid: azuqua:azuqua-connectors-api
+  name: Azuqua Connectors API
+  description: The Connectors API from Azuqua — 1 operation(s) for connectors.
+  tags:
+  - Connectors
+  properties:
+  - type: OpenAPI
+    url: openapi/azuqua-connectors-api-openapi.yml
+- aid: azuqua:azuqua-flo-api
+  name: Azuqua Flo API
+  description: The Flo API from Azuqua — 8 operation(s) for flo.
+  tags:
+  - Flo
+  properties:
+  - type: OpenAPI
+    url: openapi/azuqua-flo-api-openapi.yml
+- aid: azuqua:azuqua-folder-api
+  name: Azuqua Folder API
+  description: The Folder API from Azuqua — 5 operation(s) for folder.
+  tags:
+  - Folder
+  properties:
+  - type: OpenAPI
+    url: openapi/azuqua-folder-api-openapi.yml
+- aid: azuqua:azuqua-folders-api
+  name: Azuqua Folders API
+  description: The Folders API from Azuqua — 1 operation(s) for folders.
+  tags:
+  - Folders
+  properties:
+  - type: OpenAPI
+    url: openapi/azuqua-folders-api-openapi.yml
+- aid: azuqua:azuqua-org-api
+  name: Azuqua Org API
+  description: The Org API from Azuqua — 3 operation(s) for org.
+  tags:
+  - Org
+  properties:
+  - type: OpenAPI
+    url: openapi/azuqua-org-api-openapi.yml
+- aid: azuqua:azuqua-user-api
+  name: Azuqua User API
+  description: The User API from Azuqua — 1 operation(s) for user.
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/azuqua-user-api-openapi.yml
 x-enrichment:
   date: '2026-07-19'
   status: backfilled

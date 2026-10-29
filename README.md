@@ -64,6 +64,79 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Azuqua is a company surfaced as a portfolio company of insight-partners, techstars and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
 
-Backed by: insight-partners, techstars — https://azuqua.com/
+**Status:** end-of-life
+
+Azuqua was a Seattle-based integration platform as a service (iPaaS) and no-code workflow-automation company, backed by Insight Partners and Techstars, that let business teams build integrations and automated workflows (FLOs) across SaaS applications such as Salesforce, Slack, Marketo and ServiceNow. Azuqua was acquired by Okta in 2019 and its workflow orchestration engine and connectors were folded into Okta Workflows (part of Okta Lifecycle Management). The standalone product is now end-of-life: azuqua.com serves an acquisition notice and the API is no longer available for purchase. This API Evangelist profile documents the surviving public developer surface (legacy ReadMe docs, changelog, llms.txt) and the product's lifecycle status.
+
+**Areas:** Company · Integration · iPaaS · Workflow Automation · Integration Platform · Automation · Connectors · No-Code
+
+## Azuqua on APIs.io (historical record)
+
+Everything profiled for Azuqua is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/azuqua/](https://apis.io/providers/azuqua/)** — or go straight to one of the APIs or properties below.
+
+### APIs (8)
+
+- [Azuqua Account API](https://apis.io/apis/azuqua/azuqua-account-api/) — The Account API from Azuqua — 2 operation(s) for account.
+- [Azuqua Accounts API](https://apis.io/apis/azuqua/azuqua-accounts-api/) — The Accounts API from Azuqua — 1 operation(s) for accounts.
+- [Azuqua Connectors API](https://apis.io/apis/azuqua/azuqua-connectors-api/) — The Connectors API from Azuqua — 1 operation(s) for connectors.
+- [Azuqua Flo API](https://apis.io/apis/azuqua/azuqua-flo-api/) — The Flo API from Azuqua — 8 operation(s) for flo.
+- [Azuqua Folder API](https://apis.io/apis/azuqua/azuqua-folder-api/) — The Folder API from Azuqua — 5 operation(s) for folder.
+- [Azuqua Folders API](https://apis.io/apis/azuqua/azuqua-folders-api/) — The Folders API from Azuqua — 1 operation(s) for folders.
+- [Azuqua Org API](https://apis.io/apis/azuqua/azuqua-org-api/) — The Org API from Azuqua — 3 operation(s) for org.
+- [Azuqua User API](https://apis.io/apis/azuqua/azuqua-user-api/) — The User API from Azuqua — 1 operation(s) for user.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [azuqua-mcp.yml](https://apis.io/servers/azuqua/azuqua-mcp-yml/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Azuqua Agentic Access](https://apis.io/agentic-access/azuqua/azuqua-agentic-access/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Azuqua API Rules](https://apis.io/rules/azuqua/azuqua-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Azuqua Authentication](https://apis.io/security/azuqua/azuqua-authentication/)
+- [Azuqua Domain Security](https://apis.io/security/azuqua/azuqua-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://azuqua.com/)
+- [Documentation](https://docs.azuqua.com/)
+- [API reference](https://docs.azuqua.com/reference)
+- [Changelog](https://docs.azuqua.com/changelog/)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Azuqua: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/azuqua/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
